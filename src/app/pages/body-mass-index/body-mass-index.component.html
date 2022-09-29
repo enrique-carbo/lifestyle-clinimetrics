@@ -1,0 +1,104 @@
+<!---------------------------     Header       ------------------------------->
+<div class="header">
+    <div fxLayout="row-reverse">
+        <mat-card class="margin-top-50 margin-right-35 card-title">
+            <mat-card-title class="title-color text-center font-size-25 line-height">
+                Body Mass Index
+            </mat-card-title>
+        </mat-card>
+    </div>
+</div>
+
+<!---------------------------     Section 1        ------------------------------->
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
+class="margin-top-50">
+    <div fxFlex="50%">
+        <mat-card class="margin-x-20 padding-20">
+            <div class="text-body">
+                <span class="text-bold font-size-18">Lifestyle</span> is one of the most important determinants of health promotion that is
+                influenced by cultural, economic, political and religious factors. Lifestyle includes
+                <span class="text-bold font-size-18">day-to-day behaviors</span> and functions of individuals in job, activities, fun, and diet.
+            </div>
+            <div class="text-body">
+                Many health problems such as overweight, obesity, and cardiovascular diseases in
+                most developed and developing countries are related to the evolution in the lifestyle
+                of people in that society.
+            </div>
+            <mat-card-footer class="margin-top-10">
+                <mat-chip-list aria-label="Lifestyle" fxLayoutAlign="center center">
+                    <mat-chip color="primary" selected>Lifestyle</mat-chip>
+                    <mat-chip color="accent" selected>Overweight</mat-chip>
+                    <mat-chip color="primary" selected>Obesity</mat-chip>
+                    <mat-chip color="accent" selected>Cardiovascular Diseases</mat-chip>
+                </mat-chip-list>
+            </mat-card-footer>
+        </mat-card>
+        
+    </div>
+    <div fxFlex="50%">
+        <img src="assets/img/bmi.svg" alt="BMI image">
+    </div>
+    
+</div>
+
+<!---------------------------     Section 2       ------------------------------->
+
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
+class="margin-top-50">
+    <div fxFlex="50%">
+        <mat-card class="margin-x-20 padding-20">
+            <div class="text-body">
+                <span class="text-bold font-size-18">Obesity</span> and its development
+                throughout the globe have been three times greater since
+                1976 (WHO, 2017). Based on reports from developed countries such as Australia,
+                more than 75% of adult men suffer from overweight and obesity.
+            </div>
+            <div class="text-body">
+                The most extensive definition of obesity is 
+                <span class="text-bold font-size-18">body mass index (BMI)</span>, in which weight (kg)
+                is divided by the squared height (m). Based on the definition by WHO, a BMI of 30
+                and above indicates obesity (WHO, 2017). Obesity leads to a wide range of 
+                <span class="text-bold font-size-18">chronic systemic diseases</span> and an increase in risk for surgery.
+            </div>
+            <mat-card-footer class="margin-top-10">
+                <mat-chip-list aria-label="Lifestyle" fxLayoutAlign="center center">
+                    <mat-chip color="primary" selected>Obesity</mat-chip>
+                    <mat-chip color="accent" selected>BMI</mat-chip>
+                    <mat-chip color="primary" selected>Chronic Diseases</mat-chip>
+                </mat-chip-list>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div fxFlex="50%" class="margin-x-15">
+        <img src="assets/img/bmi-file.svg" alt="BMI image"> 
+    </div>
+</div>
+
+<!---------------------------     Section 3 Calculator      ------------------------------->
+
+<div fxLayout="row" fxLayoutAlign="center center">
+
+<div>
+    <div class="font-size-25">BMI Calculator</div>
+    <div class="margin-top-50">
+        <mat-form-field appearance="fill">
+            <mat-label>Weight (kg)</mat-label>
+            <input matInput type="number">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Height (m)</mat-label>
+            <input matInput type="number">
+        </mat-form-field>
+    </div>
+        
+    <button mat-raised-button color="primary">Calculate</button>
+</div>
+</div>
+
+
+
+
+
