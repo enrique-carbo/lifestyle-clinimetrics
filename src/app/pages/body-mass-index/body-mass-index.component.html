@@ -35,7 +35,7 @@ class="margin-top-50">
         </mat-card>
         
     </div>
-    <div fxFlex="50%">
+    <div fxFlex="50%" class="margin-top-50">
         <img src="assets/img/bmi.svg" alt="BMI image">
     </div>
     
@@ -79,25 +79,47 @@ class="margin-top-50">
 
 <div fxLayout="row" fxLayoutAlign="center center">
 
-<div>
-    <div class="font-size-25">BMI Calculator</div>
+<div [formGroup]="bmiForm" class="bmi-form">
+    <div class="font-size-25 text-center">BMI Calculator</div>
     <div class="margin-top-50">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Weight (kg)</mat-label>
-            <input matInput type="number">
+            <input matInput type="number" min="10" max="250" 
+            formControlName="weight">
+            <mat-hint>kilograms (ex. 80)</mat-hint>
         </mat-form-field>
     </div>
-    <div>
-        <mat-form-field appearance="fill">
+    <div class="margin-top-10">
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Height (m)</mat-label>
-            <input matInput type="number">
+            <input matInput type="number" min="0.5" max="2.5" step="0.01" 
+            formControlName="height">
+            <mat-hint>meters (ex. 1.75)</mat-hint>
         </mat-form-field>
     </div>
-        
-    <button mat-raised-button color="primary">Calculate</button>
-</div>
+
+                
+    <button mat-raised-button color="primary" class="full-width margin-top-50"
+    (click)="calculate()"
+    [disabled]="!bmiForm.valid">
+    Calculate
+    </button>
 </div>
 
+
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="margin-top-50 margin-bottom-50">
+
+    <mat-card *ngIf="bmi > 0" class="bmi-card text-center" 
+    [ngClass]="{'bg-danger': bmi >= 30 || bmi <= 18,
+                'bg-good': bmi < 25 && bmi > 18, 
+                'bg-warning': bmi >= 25 && bmi < 30}">
+        <div class="font-size-25"> Your BMI is {{ fixedBmi }}</div>
+    </mat-card>
+    
+</div>
 
 
 

@@ -3,7 +3,7 @@ img {
 }
 
 .header {
-    background-image: url("/assets/img/weight-loss-scale-centimeter-1024-768.jpg");
+    background-image: url("/assets/img/measure-waist.jpg");
     background-color: cadetblue;
     height: 300px; 
     background-position: center;
@@ -28,10 +28,6 @@ img {
     margin-right: 35px;
 }
 
-.margin-bottom-50 {
-    margin-bottom: 50px;
-}
-
 .margin-x-20 {
     margin-left: 20px;
     margin-right: 20px;
@@ -52,16 +48,20 @@ img {
     opacity: 0.9;
 }
 
+.line-height {
+    line-height: 1.2;
+}
+
 .text-center {
     text-align: center;
 }
 
-.font-size-25 {
-    font-size: 25px;
-}
-
 .font-size-18 {
     font-size: 18px;
+}
+
+.font-size-25 {
+    font-size: 25px;
 }
 
 .text-bold {
@@ -72,52 +72,3 @@ img {
     font-size: larger;
     line-height: 1.6;
 }
-
-.line-height {
-    line-height: 1.2;
-}
-
-.banner {
-    background-color: cornflowerblue;
-    height: 150px;
-}
-
-.text-banner {
-    color: white;
-}
-
-.width-500 {
-    width: 500px;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.bmi-form {
-    min-width: 150px;
-    max-width: 300px;
-    width: 100%;
-}
-
-.bmi-card {
-    min-width: 150px;
-    max-width: 300px;
-    width: 300px;
-}
-
-.bg-danger {
-    background-color: crimson;
-}
-
-.bg-good {
-    background-color: limegreen;
-}
-
-.bg-warning {
-    background-color: yellowgreen;
-}
-
-
-
-

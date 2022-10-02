@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-body-mass-index',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyMassIndexComponent implements OnInit {
 
-  constructor() { }
+  bmiForm = this.fb.group({
+    weight: [0, Validators.required],
+    height: [0, Validators.required]
+  })
+ 
+  bmi:number = 0
+  fixedBmi: number = 0
+  
+
+  calculate(){
+    this.bmi = this.bmiForm.value.weight! / (this.bmiForm.value.height! * this.bmiForm.value.height!)
+    this.fixedBmi = Math.round(this.bmi *100)/100;
+    
+  }
+  
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    
   }
 
 }
