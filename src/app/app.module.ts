@@ -15,6 +15,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BodyMassIndexComponent } from './pages/body-mass-index/body-mass-index.component'
 import { SidenavListComponent } from './component/sidenav-list/sidenav-list.component';
+import { WaistCircumferenceComponent } from './pages/waist-circumference/waist-circumference.component';
 
 // Angular Material
 import {MatButtonModule} from '@angular/material/button';
@@ -26,7 +27,9 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatInputModule} from '@angular/material/input'
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-import { WaistCircumferenceComponent } from './pages/waist-circumference/waist-circumference.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 
 
@@ -56,7 +59,9 @@ import { WaistCircumferenceComponent } from './pages/waist-circumference/waist-c
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRadioModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,12 +20,20 @@ img {
     margin-top: 10px;
 }
 
+.margin-top-30 {
+    margin-top: 30px;
+}
+
 .margin-top-50 {
     margin-top: 50px;
 }
 
 .margin-right-35 {
     margin-right: 35px;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
 }
 
 .margin-x-20 {
@@ -35,6 +43,10 @@ img {
 
 .padding-20 {
     padding: 20px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
 }
 
 .card-title {
@@ -71,4 +83,30 @@ img {
 .text-body {
     font-size: larger;
     line-height: 1.6;
+}
+
+.wc-form {
+    min-width: 150px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.bg-danger {
+    background-color: crimson;
+}
+
+.bg-good {
+    background-color: limegreen;
+}
+
+.bg-warning {
+    background-color: rgb(201, 101, 13);
+}
+
+.text-white {
+    color: floralwhite;
 }

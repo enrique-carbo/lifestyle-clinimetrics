@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-waist-circumference',
@@ -7,7 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WaistCircumferenceComponent implements OnInit {
 
-  constructor() { }
+  wcForm = this.fb.group({
+    gender: ['', Validators.required],
+    waist: [90, Validators.required]
+  })
+
+  cardResponse = false
+  disableSlider = false
+  disableGender = false
+
+  calculate(){
+    this.cardResponse = true
+    this.disableSlider = true
+    this.disableGender = true
+  }
+
+  delete(){
+    this.wcForm.reset()
+    this.cardResponse = false
+    this.disableSlider = false
+    this.disableGender = false
+  }
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

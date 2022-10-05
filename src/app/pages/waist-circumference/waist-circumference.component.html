@@ -48,7 +48,8 @@ class="margin-top-50">
         
     </div>
     <div fxFlex="50%" class="margin-top-50 margin-x-20">
-        <img src="assets/img/waist-circum-illustration.svg" alt="Illustration about exercise">
+        <img src="assets/img/waist-circum-illustration.svg" alt="Illustration about exercise"
+        height="500px">
     </div>
     
 </div>
@@ -66,6 +67,7 @@ class="margin-top-50">
                 <li>Find the bottom of your ribs and the top of your hips.</li>
                 <li>Place a tape measure around your middle at a point halfway
                 between them (just above the belly button).</li>
+                <li>Make sure tape is horizontal around the waist.</li>
                 <li>Make sure it’s pulled tight, but isn’t digging into your skin.</li>
                 <li>Breathe out naturally and take your measurement.</li>
                 <li>Take your measurement again, just to be sure.</li>
@@ -75,8 +77,135 @@ class="margin-top-50">
     </div>
 
     <div fxFlex="50%" class="margin-x-20 margin-top-10">
-        <img src="assets/img/waist-circumference.svg" alt="Waist measure illustration"> 
+        <img src="assets/img/waist-circumference.svg" 
+        alt="Waist measure illustration" height="500px"> 
     </div>
 </div>
 
+<!---------------------------     Section 3 Calculator      ------------------------------->
+
+<div fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="wc-form margin-top-50">
+    <div [formGroup]="wcForm">
+        <div class="font-size-25 text-center margin-top-10">Waist Measure Tool</div>
+        
+            <div class="margin-top-50 font-size-18">Select your gender</div>
+            <div class="margin-top-50">
+                <mat-radio-group aria-label="Select an option" formControlName="gender"
+                [disabled]="disableGender">
+                    <mat-radio-button value="1"
+                    class="margin-right-10 font-size-18">
+                    Male
+                    </mat-radio-button>
+                    <mat-radio-button value="2" class="font-size-18">
+                        Female
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div class="margin-top-50 font-size-18">Enter your measure</div>
+            <div>Selected value: {{ wcForm.value.waist }} </div>
+            <mat-slider min="25" max="180" step="1" formControlName="waist"
+            class="full-width margin-top-30" aria-labelledby="Waist measure"
+            thumbLabel [disabled]="disableSlider"></mat-slider>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" class="margin-top-50"
+                    (click)="calculate()"
+                    [disabled]="!wcForm.valid">
+                    Calculate
+                </button>
+                <button mat-raised-button color="accent" class="margin-top-50"
+                    (click)="delete()"
+                    [disabled]="!wcForm.valid">
+                    Delete
+                </button>
+            </mat-card-actions>
+           
+    </div>
+    </mat-card>
+</div>
+
+<!---------------------------     Section 4 Response      ------------------------------->
+
+<div fxLayout="row" fxLayoutAlign="center center" class="margin-top-50 margin-bottom-50">
+<div>
+    <mat-card class="wc-form bg-good padding-20"
+    *ngIf="wcForm.value.gender === '1' && wcForm.value.waist! < 94 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Your waist measurement is normal.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="wc-form bg-good padding-20"
+    *ngIf="wcForm.value.gender === '2' && wcForm.value.waist! < 80 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Your waist measurement is normal.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="wc-form bg-warning padding-20"
+    *ngIf="wcForm.value.gender === '1' && wcForm.value.waist! >= 94 
+    && wcForm.value.waist! <= 102 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Based on your waist circumference measurement, you are at increased
+            risk for high blood fat levels, high blood pressure, and diabetes.</div>
+            <div class="margin-top-10">Maintaining a proper weight will help keep you healthy.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="wc-form bg-warning padding-20"
+    *ngIf="wcForm.value.gender === '2' && wcForm.value.waist! >= 80 
+    && wcForm.value.waist! <= 88 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Based on your waist circumference measurement, you are at increased
+            risk for high blood fat levels, high blood pressure, and diabetes.</div>
+            <div class="margin-top-10">Maintaining a proper weight will help keep you healthy.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="wc-form bg-danger padding-20"
+    *ngIf="wcForm.value.gender === '1' && wcForm.value.waist! > 102 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Based on your waist circumference measurement, you are at very high
+            risk for high blood fat levels, high blood pressure, and diabetes.</div>
+            <div class="margin-top-10">Maintaining a proper weight will help keep you healthy.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="wc-form bg-danger padding-20"
+    *ngIf="wcForm.value.gender === '2' && wcForm.value.waist! > 88 && cardResponse">
+        <div class="font-size-25 line-height text-white">
+            <div>Based on your waist circumference measurement, you are at very high
+            risk for high blood fat levels, high blood pressure, and diabetes.</div>
+            <div class="margin-top-10">Maintaining a proper weight will help keep you healthy.</div>
+            <div class="margin-top-10 text-center">Consult your doctor.</div>
+        </div>
+    </mat-card>
+
+    <div fxLayout="row" fxLayoutAlign="center center" class="margin-top-10"
+    *ngIf="wcForm.value.gender === '1' && wcForm.value.waist! > 94 && cardResponse">
+        <mat-chip color="primary" selected
+        class="font-size-18">
+            Your suggested waist measurement: less 94 cm
+        </mat-chip>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="center center" class="margin-top-10"
+    *ngIf="wcForm.value.gender === '2' && wcForm.value.waist! > 80 && cardResponse">
+        <mat-chip color="primary" selected
+        class="font-size-18">
+        Your suggested waist measurement: less 80 cm
+        </mat-chip>
+    </div>
+
+    
+</div>
+</div>
 
