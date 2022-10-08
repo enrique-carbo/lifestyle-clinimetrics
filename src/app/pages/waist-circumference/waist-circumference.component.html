@@ -12,7 +12,7 @@
 <!---------------------------     Section 1        ------------------------------->
 <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
 class="margin-top-50">
-    <div fxFlex="50%">
+    <div fxFlex="60%" fxLayoutAlign="end">
         <mat-card class="margin-x-20 padding-20">
             <div class="text-body">
                 The prevalence of adult overweight and obesity as defined using BMI has
@@ -47,7 +47,7 @@ class="margin-top-50">
         </mat-card>
         
     </div>
-    <div fxFlex="50%" class="margin-top-50 margin-x-20">
+    <div fxFlex="40%" class="margin-top-50 margin-x-20">
         <img src="assets/img/waist-circum-illustration.svg" alt="Illustration about exercise"
         height="500px">
     </div>
@@ -58,7 +58,7 @@ class="margin-top-50">
 
 <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
 class="margin-top-50">
-    <div fxFlex="50%">
+    <div fxFlex="60%">
         <mat-card class="margin-x-20 padding-20">
             <mat-card-title class="text-center">
                 How to measure your waist
@@ -76,7 +76,7 @@ class="margin-top-50">
         </mat-card>
     </div>
 
-    <div fxFlex="50%" class="margin-x-20 margin-top-10">
+    <div fxFlex="40%" class="margin-x-20 margin-top-10">
         <img src="assets/img/waist-circumference.svg" 
         alt="Waist measure illustration" height="500px"> 
     </div>
@@ -92,14 +92,13 @@ class="margin-top-50">
         
             <div class="margin-top-50 font-size-18">Select your gender</div>
             <div class="margin-top-50">
-                <mat-radio-group aria-label="Select an option" formControlName="gender"
-                [disabled]="disableGender">
+                <mat-radio-group aria-label="Select an option" formControlName="gender">
                     <mat-radio-button value="1"
                     class="margin-right-10 font-size-18">
                     Male
                     </mat-radio-button>
                     <mat-radio-button value="2" class="font-size-18">
-                        Female
+                    Female
                     </mat-radio-button>
                 </mat-radio-group>
             </div>
@@ -108,7 +107,7 @@ class="margin-top-50">
             <div>Selected value: {{ wcForm.value.waist }} </div>
             <mat-slider min="25" max="180" step="1" formControlName="waist"
             class="full-width margin-top-30" aria-labelledby="Waist measure"
-            thumbLabel [disabled]="disableSlider"></mat-slider>
+            thumbLabel></mat-slider>
 
             <mat-card-actions>
                 <button mat-raised-button color="primary" class="margin-top-50"

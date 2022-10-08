@@ -9,25 +9,23 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class WaistCircumferenceComponent implements OnInit {
 
   wcForm = this.fb.group({
-    gender: ['', Validators.required],
-    waist: [90, Validators.required]
+    gender: [{value: '', disabled: false}, Validators.required],
+    waist: [{value: 90, disabled: false}, Validators.required]
   })
 
   cardResponse = false
-  disableSlider = false
-  disableGender = false
-
+ 
   calculate(){
     this.cardResponse = true
-    this.disableSlider = true
-    this.disableGender = true
+    this.wcForm.get('gender')?.disable({onlySelf: true})
+    this.wcForm.get('waist')?.disable({onlySelf: true})
   }
 
   delete(){
     this.wcForm.reset()
     this.cardResponse = false
-    this.disableSlider = false
-    this.disableGender = false
+    this.wcForm.get('gender')?.enable()
+    this.wcForm.get('waist')?.enable()
   }
 
   constructor(private fb: FormBuilder) { }

@@ -16,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BodyMassIndexComponent } from './pages/body-mass-index/body-mass-index.component'
 import { SidenavListComponent } from './component/sidenav-list/sidenav-list.component';
 import { WaistCircumferenceComponent } from './pages/waist-circumference/waist-circumference.component';
+import { MetabolicSyndromeComponent } from './pages/metabolic-syndrome/metabolic-syndrome.component';
 
 // Angular Material
 import {MatButtonModule} from '@angular/material/button';
@@ -29,10 +30,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSliderModule} from '@angular/material/slider';
-
-
-
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -42,7 +41,8 @@ import {MatSliderModule} from '@angular/material/slider';
     HomeComponent,
     SidenavListComponent,
     BodyMassIndexComponent,
-    WaistCircumferenceComponent
+    WaistCircumferenceComponent,
+    MetabolicSyndromeComponent
   ],
   imports: [
     FormsModule,
@@ -61,7 +61,9 @@ import {MatSliderModule} from '@angular/material/slider';
     MatCardModule,
     MatChipsModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

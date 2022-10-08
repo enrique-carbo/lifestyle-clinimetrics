@@ -1,0 +1,110 @@
+img { 
+    width: 100%
+}
+
+.header {
+    background-image: url("/assets/img/medical-man.jpg");
+    background-color: cadetblue;
+    height: 300px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-blend-mode: multiply;
+}
+
+.title-color {
+    color: white;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.margin-right-35 {
+    margin-right: 35px;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.margin-x-20 {
+    margin-left: 20px;
+    margin-right: 20px;
+} 
+
+.padding-20 {
+    padding: 20px;
+}
+
+.card-title {
+    background-color: slategray;
+    opacity: 0.8;
+    width: 250px;
+    padding: 30px;
+}
+
+.card-title:hover {
+    opacity: 0.9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-size-25 {
+    font-size: 25px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-body {
+    font-size: larger;
+    line-height: 1.6;
+}
+
+.line-height {
+    line-height: 1.2;
+}
+
+.width-500 {
+    width: 500px;
+}
+
+.width-300 {
+    width: 300px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.ms-card {
+    min-width: 150px;
+    max-width: 400px;
+    width: 400px;
+}
+
+.bg-danger {
+    background-color: crimson;
+}
+
+.bg-good {
+    background-color: limegreen;
+}
+
+.bg-warning {
+    background-color: yellowgreen;
+}
+
+  
