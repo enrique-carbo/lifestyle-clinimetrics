@@ -1,15 +1,20 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import data from '../../../assets/data/articles.json';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-articles',
+  templateUrl: './articles.component.html',
+  styleUrls: ['./articles.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class ArticlesComponent implements OnInit, AfterViewInit {
+
+  public articles:{title:string, description:string, date:string, image:string, link:string}[] = data
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   ngAfterViewInit() {

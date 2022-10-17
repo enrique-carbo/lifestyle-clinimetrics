@@ -12,11 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // Components
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BodyMassIndexComponent } from './pages/body-mass-index/body-mass-index.component'
 import { SidenavListComponent } from './component/sidenav-list/sidenav-list.component';
 import { WaistCircumferenceComponent } from './pages/waist-circumference/waist-circumference.component';
 import { MetabolicSyndromeComponent } from './pages/metabolic-syndrome/metabolic-syndrome.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
 
 // Angular Material
 import {MatButtonModule} from '@angular/material/button';
@@ -32,6 +34,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import { ToolsComponent } from './pages/tools/tools.component';
+
+
 
 
 @NgModule({
@@ -42,7 +47,10 @@ import {MatDividerModule} from '@angular/material/divider';
     SidenavListComponent,
     BodyMassIndexComponent,
     WaistCircumferenceComponent,
-    MetabolicSyndromeComponent
+    MetabolicSyndromeComponent,
+    FooterComponent,
+    ArticlesComponent,
+    ToolsComponent
   ],
   imports: [
     FormsModule,

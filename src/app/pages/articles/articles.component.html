@@ -1,0 +1,78 @@
+<!---------------------------     Header       ------------------------------->
+<div class="header" id="top">
+    <div fxLayout="row-reverse">
+        <mat-card class="margin-top-50 margin-right-35 card-title">
+            <mat-card-title class="title-color text-center font-size-25 line-height">
+                Articles
+            </mat-card-title>
+        </mat-card>
+    </div>
+</div>
+
+<!---------------------------- Section 1 ----------------------------------->
+
+<div  fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
+class="margin-top-50 margin-bottom-50">
+        
+    <div fxFlex="50%" class="first-margin margin-x-10">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/36185329/" target="_blank"
+        class="first-link font-size-22 text-bold line-height">
+        Mulberry polyphenols ameliorate atherogenic migration and proliferation.
+        </a>
+
+        <div class="margin-top-10 text-italic">
+        2022 Oct 12
+        </div>
+        
+        <div class="margin-top-20 text-body">
+            Extra proliferation and increased migration of vascular smooth cells
+            contribute to the formation of atherosclerosis.
+            Mulberry (Morus spp., Moraceae), is an economic plant that is widely cultivated.
+            It has been used as a folk medicine for a long time. 
+            Extracts from mulberry have pharmacological properties, including antioxidant,
+            anti-inflammation, and anti-diabetes activities
+            Mulberry leaf tea and it major ingredient deoxynojirimycin significantly
+            repressed cerebrovascular and cardiovascular events and reduced carotid
+            intima-media thickness in patients with coronary heart disease in a clinical trial.
+        </div>
+    </div>
+
+    <div fxFlex="50%" class="margin-top-20 padding-top-10 padding-x-20">
+       <img src="https://img.freepik.com/free-photo/mulberry-juice-with-berries_1150-48126.jpg?w=1380&t=st=1665577862~exp=1665578462~hmac=ceeaf2afb78beaf5ca98418afa55646f9b20ec870fc42aab3d33db1f5eafdd84" 
+        alt="Image" class="image-responsive center border-radius-5">
+    </div>
+    
+
+</div>
+
+<!--------------------------- Section 2 --------------------------------------------->
+
+<div class="font-size-25 text-bold margin-left-50">More Articles</div>
+
+<div  fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-around"
+class="margin-bottom-50" fxLayoutGap="10px">
+
+<div *ngFor="let article of articles" class="margin-top-50">
+    <mat-card class="article-card margin-x-10">
+        <mat-card-header>
+          <mat-card-title>
+            <a href="{{ article.link }}" target="_blank"
+            class="first-link font-size-18 text-bold line-height">
+            {{ article.title }}
+            </a> 
+          </mat-card-title>
+          <mat-card-subtitle> {{ article.date }} </mat-card-subtitle> 
+        </mat-card-header>
+        <img mat-card-image src="{{ article.image }}" alt="{{article.title}}">
+        <mat-card-content>
+          <p class="text-body">
+           {{ article.description }}
+          </p>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+</div>
+

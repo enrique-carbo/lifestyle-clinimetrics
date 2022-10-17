@@ -1,0 +1,90 @@
+<!---------------------------     Header       ------------------------------->
+<div class="header" id="top">
+    <div fxLayout="row-reverse">
+        <mat-card class="margin-top-50 margin-right-35 card-title">
+            <mat-card-title class="title-color text-center font-size-25 line-height">
+                Clinimetrics tools
+            </mat-card-title>
+        </mat-card>
+    </div>
+</div>
+
+<!------------------------------- Section 1  ----------------------------------------->
+
+<div  fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-around"
+class="margin-bottom-50" fxLayoutGap="10px">
+    <div class="margin-top-50">
+        <mat-card class="tool-card margin-x-10">
+            <mat-card-header>
+              <mat-card-title>
+                Body Mass Index
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image 
+            src="/assets/img/weight-loss-scale-centimeter-1024-768.jpg" 
+            alt="Image for BMI">
+            <mat-card-content>
+              <p class="text-body">
+                Body mass index (BMI) is a value derived from the mass (weight)
+                and height of a person. The BMI is defined as the body mass
+                divided by the square of the body height, and is expressed in
+                units of kg/m2, resulting from mass in kilograms and height in metres.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-fab color="primary" aria-label="button" (click)="GoBMI()">
+                    Go <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    
+    <div class="margin-top-50">
+        <mat-card class="tool-card margin-x-10">
+            <mat-card-header>
+              <mat-card-title>
+                Waist Circumference
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image 
+            src="/assets/img/measure-waist.jpg" 
+            alt="Image for BMI">
+            <mat-card-content>
+              <p class="text-body">
+                The importance of body fat distribution as a risk factor for several
+                diseases (for example, CVD, hypertension, stroke and T2DM) and mortality
+                has been recognized for several decades.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-fab color="primary" aria-label="button" (click)="GoWC()">
+                    Go <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="margin-top-50">
+        <mat-card class="tool-card margin-x-10">
+            <mat-card-header>
+              <mat-card-title>
+                Metabolic Syndrome
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image 
+            src="/assets/img/medical-man.jpg" 
+            alt="Image for BMI">
+            <mat-card-content>
+              <p class="text-body">
+                Metabolic syndrome is a cluster of conditions that occur together,
+                increasing your risk of heart disease, stroke and type 2 diabetes.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-fab color="primary" aria-label="button" (click)="GoMetabolicSyndrome()">
+                    Go <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

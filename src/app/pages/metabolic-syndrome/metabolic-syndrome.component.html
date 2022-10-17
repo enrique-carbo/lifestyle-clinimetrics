@@ -1,5 +1,5 @@
 <!---------------------------     Header       ------------------------------->
-<div class="header">
+<div class="header" id="top">
     <div fxLayout="row-reverse">
         <mat-card class="margin-top-50 margin-right-35 card-title">
             <mat-card-title class="title-color text-center font-size-25 line-height">
@@ -30,7 +30,7 @@ class="margin-top-50">
                 It identifies a subgroup of patients with shared pathophysiology who are
                 at high risk of developing cardiovascular disease and type 2 diabetes.
             </div>
-            <mat-card-footer class="margin-top-10">
+            <mat-card-footer class="margin-top-50 margin-bottom-10">
                 <mat-chip-list aria-label="Lifestyle" fxLayoutAlign="center center">
                     <mat-chip color="primary" selected>Metabolic Syndrome</mat-chip>
                     <mat-chip color="accent" selected>Type 2 Diabetes</mat-chip>
@@ -64,7 +64,7 @@ class="margin-top-50">
                 metabolic syndrome. It incorporates the key features of hyperglycemia/insulin
                 resistance, visceral obesity, atherogenic dyslipidemia and hypertension.
             </div>
-            <mat-card-footer class="margin-top-10">
+            <mat-card-footer class="margin-top-50 margin-bottom-10">
                 <mat-chip-list aria-label="Lifestyle" fxLayoutAlign="center center">
                     <mat-chip color="primary" selected>Hyperglycemia</mat-chip>
                     <mat-chip color="accent" selected>Visceral obesity</mat-chip>
@@ -82,29 +82,70 @@ class="margin-top-50">
 
 <!---------------------------     Section 3 Calculator      ------------------------------->
 
-<div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="ms-card margin-top-50">
-        <mat-card-title class="text-center">Metabolic Syndrome</mat-card-title>
-        <mat-checkbox>
-            Waist circumference over 94 cm (men) or 80 cm (women).
+<div fxLayout="row" fxLayoutAlign="center center" class="margin-bottom-50">
+    <mat-card class="ms-card margin-top-50 margin-x-20">
+        <mat-card-title class="text-center font-size-25">Metabolic Syndrome</mat-card-title>
+        <mat-checkbox class="margin-top-10 font-size-18" 
+        [(ngModel)]="items[0].checked" [checked]="items[0].checked">
+            {{ items[0].name }}
         </mat-checkbox>
         <mat-divider></mat-divider>
-        <mat-checkbox>
-            Fasting blood sugar over 100 mg/dl or pharmacologic treatment.
+        <mat-checkbox class="margin-top-10 font-size-18"
+        [(ngModel)]="items[1].checked" [checked]="items[1].checked">
+            {{ items[1].name }}
         </mat-checkbox>
         <mat-divider></mat-divider>
-        <mat-checkbox>
-            Fasting triglyceride (TG) level over 150 mg/dl or pharmacologic treatment.
+        <mat-checkbox class="margin-top-10 font-size-18"
+        [(ngModel)]="items[2].checked" [checked]="items[2].checked">
+            {{ items[2].name }}
         </mat-checkbox>
         <mat-divider></mat-divider>
-        <mat-checkbox>
-            Fasting high-density lipoprotein (HDL) cholesterol level less than 40 mg/dl 
-            (men) or 50 mg/dl (women) or pharmacologic treatment.
+        <mat-checkbox class="margin-top-10 font-size-18"
+        [(ngModel)]="items[3].checked" [checked]="items[3].checked">
+            {{ items[3].name }}
         </mat-checkbox>
         <mat-divider></mat-divider>
-        <mat-checkbox>
-            Blood pressure over 130/85 mmHg o pharmacologic treatment.
+        <mat-checkbox class="margin-top-10 font-size-18"
+        [(ngModel)]="items[4].checked" [checked]="items[4].checked">
+            {{ items[4].name }}
         </mat-checkbox>
-    </mat-card>
 
+        <mat-card-actions class="margin-top-50">
+            <button mat-raised-button color="primary"
+            (click)="calculate()">Calculate</button>
+            <button mat-raised-button color="warn"
+            (click)="delete()">Delete</button>
+        </mat-card-actions>
+    </mat-card>
 </div>
+
+<!---------------------------     Section 4 Response      ------------------------------->
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="response && metabolicSyndrome === false"
+class="margin-bottom-50">
+    <mat-card class="ms-card margin-top-50 margin-x-20 font-size-25 bg-good text-white line-height">
+        <div class="text-center">
+            <mat-icon aria-hidden="false" aria-label="Sentiment satisfied icon" 
+            fontIcon="sentiment_satisfied" class="customIconSize"></mat-icon>
+        </div>
+        
+        <div class="margin-top-10">You do not have sufficient criteria for the diagnosis of metabolic syndrome.</div>
+        <div class="margin-top-10">Always Consult your Doctor.</div>
+    </mat-card>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="response && metabolicSyndrome"
+class="margin-bottom-50">
+
+    <mat-card class="ms-card margin-top-50 margin-x-20 font-size-25 bg-danger text-white line-height">
+        
+        <div class="text-center">
+            <mat-icon aria-hidden="false" aria-label="Sentiment dissatisfied icon" 
+            fontIcon="sentiment_dissatisfied" class="customIconSize"></mat-icon>
+        </div>
+        
+        <div>You have sufficient criteria for a diagnosis of metabolic syndrome.</div>
+        <div class="margin-top-10">Always Consult your Doctor.</div>
+    </mat-card>
+</div>
+

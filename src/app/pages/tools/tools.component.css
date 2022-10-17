@@ -1,9 +1,11 @@
-img { 
-    width: 100%
+.image-responsive {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
 }
 
 .header {
-    background-image: url("/assets/img/medical-man.jpg");
+    background-image: url("/assets/img/physician-tools.jpg");
     background-color: cadetblue;
     height: 300px; 
     background-position: center;
@@ -20,33 +22,38 @@ img {
     margin-top: 10px;
 }
 
+.margin-top-20 {
+    margin-top: 20px;
+}
+
 .margin-top-50 {
     margin-top: 50px;
-}
-
-.margin-right-35 {
-    margin-right: 35px;
-}
-
-.margin-bottom-10 {
-    margin-bottom: 10px;
 }
 
 .margin-bottom-50 {
     margin-bottom: 50px;
 }
 
-.margin-bottom-150 {
-    margin-bottom: 150px;
+.margin-right-35 {
+    margin-right: 35px;
 }
 
-.margin-x-20 {
-    margin-left: 20px;
-    margin-right: 20px;
+.margin-left-50 {
+    margin-left: 50px;
+}
+
+.margin-x-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
 } 
 
-.padding-20 {
-    padding: 20px;
+.padding-x-20 {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card-title {
@@ -62,6 +69,10 @@ img {
 
 .text-center {
     text-align: center;
+}
+
+.font-size-22 {
+    font-size: 22px;
 }
 
 .font-size-25 {
@@ -89,39 +100,26 @@ img {
     line-height: 1.2;
 }
 
-.width-500 {
-    width: 500px;
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.width-300 {
-    width: 300px;
+.border-radius-5 {
+    border-radius: 5%;
 }
 
-.full-width {
-    width: 100%;
+.text-italic {
+    font-style: italic;
 }
 
-.ms-card {
-    min-width: 150px;
+.tool-card {
     max-width: 500px;
-    width: 500px;
+    min-height: 550px;
 }
 
-.bg-danger {
-    background-color: crimson;
+mat-card-header {
+    min-height: 50px;
 }
 
-.bg-good {
-    background-color: limegreen;
-}
-
-.bg-warning {
-    background-color: yellowgreen;
-}
-
-.customIconSize {
-    font-size: 50px;
-    height: 50px ;
-    width: 50px ;
-}
-  
