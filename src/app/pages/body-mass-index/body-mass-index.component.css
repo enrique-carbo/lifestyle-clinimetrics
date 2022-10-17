@@ -7,7 +7,7 @@ mat-form-field {
 }
 
 .header {
-    background-image: url("/assets/img/weight-loss-scale-centimeter-1024-768.jpg");
+    background-image: url("../../../assets/img/weight-loss-scale-centimeter-1024-768.jpg");
     background-color: cadetblue;
     height: 300px; 
     background-position: center;
